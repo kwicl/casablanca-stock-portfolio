@@ -58,7 +58,7 @@ export function PortfolioStrip() {
           <span
             className={cn(
               'flex items-center gap-1 text-base font-extrabold tabular-nums sm:text-2xl',
-              up ? 'text-sky-600 dark:text-sky-400' : 'text-red-600 dark:text-red-400',
+              up ? 'text-emerald-600 dark:text-emerald-400' : 'text-red-600 dark:text-red-400',
             )}
           >
             <Icon className="h-4 w-4 shrink-0 sm:h-5 sm:w-5" />

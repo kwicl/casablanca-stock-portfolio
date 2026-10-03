@@ -108,7 +108,7 @@ export function PortfolioView() {
                 className={cn(
                   'text-2xl font-bold tabular-nums',
                   totals.pnl >= 0
-                    ? 'text-sky-600 dark:text-sky-400'
+                    ? 'text-emerald-600 dark:text-emerald-400'
                     : 'text-red-600 dark:text-red-400',
                 )}
               >
@@ -191,7 +191,7 @@ export function PortfolioView() {
                       className={cn(
                         'text-right font-semibold tabular-nums',
                         pnl >= 0
-                          ? 'text-sky-600 dark:text-sky-400'
+                          ? 'text-emerald-600 dark:text-emerald-400'
                           : 'text-red-600 dark:text-red-400',
                       )}
                     >
@@ -201,7 +201,7 @@ export function PortfolioView() {
                       className={cn(
                         'text-right font-semibold tabular-nums',
                         pnlPct >= 0
-                          ? 'text-sky-600 dark:text-sky-400'
+                          ? 'text-emerald-600 dark:text-emerald-400'
                           : 'text-red-600 dark:text-red-400',
                       )}
                     >
@@ -252,7 +252,7 @@ export function PortfolioView() {
                     className={cn(
                       'text-right tabular-nums',
                       totals.pnl >= 0
-                        ? 'text-sky-600 dark:text-sky-400'
+                        ? 'text-emerald-600 dark:text-emerald-400'
                         : 'text-red-600 dark:text-red-400',
                     )}
                   >
@@ -262,7 +262,7 @@ export function PortfolioView() {
                     className={cn(
                       'text-right tabular-nums',
                       totalsPct >= 0
-                        ? 'text-sky-600 dark:text-sky-400'
+                        ? 'text-emerald-600 dark:text-emerald-400'
                         : 'text-red-600 dark:text-red-400',
                     )}
                   >

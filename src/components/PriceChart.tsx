@@ -51,7 +51,7 @@ export function PriceChart({ symbol, livePrice }: PriceChartProps) {
   const periodChange = shown ? shown.close - first : 0;
   const periodChangePct = first > 0 ? (periodChange / first) * 100 : 0;
   const positive = (shown?.close ?? 0) >= first;
-  const color = positive ? '#0ea5e9' : '#ef4444';
+  const color = positive ? '#22c55e' : '#ef4444';
 
   const minClose = Math.min(...data.map((d) => d.close));
   const maxClose = Math.max(...data.map((d) => d.close));
@@ -84,7 +84,7 @@ export function PriceChart({ symbol, livePrice }: PriceChartProps) {
           className={cn(
             'text-xs font-semibold tabular-nums',
             periodChange >= 0
-              ? 'text-sky-600 dark:text-sky-400'
+              ? 'text-emerald-600 dark:text-emerald-400'
               : 'text-red-600 dark:text-red-400',
           )}
         >

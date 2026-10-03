@@ -248,7 +248,7 @@ export function SellSimulator({ position, quotes, open, onOpenChange }: SellSimu
                     className={cn(
                       'font-bold tabular-nums',
                       result.netPnl >= 0
-                        ? 'text-sky-600 dark:text-sky-400'
+                        ? 'text-emerald-600 dark:text-emerald-400'
                         : 'text-red-600 dark:text-red-400',
                     )}
                   >

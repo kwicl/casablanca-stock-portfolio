@@ -20,7 +20,7 @@ export function VariationBadge({ changePct, className }: VariationBadgeProps) {
         flat
           ? 'bg-muted text-muted-foreground'
           : up
-            ? 'bg-sky-500/15 text-sky-600 dark:text-sky-400'
+            ? 'bg-emerald-500/15 text-emerald-600 dark:text-emerald-400'
             : 'bg-red-500/15 text-red-600 dark:text-red-400',
         className,
       )}

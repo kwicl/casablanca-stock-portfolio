@@ -71,7 +71,7 @@ export function MarketWatch() {
               </CardTitle>
             </CardHeader>
             <CardContent className="flex items-center gap-3 pb-4">
-              <span className="inline-flex items-center gap-1 text-lg font-bold text-sky-600 dark:text-sky-400">
+              <span className="inline-flex items-center gap-1 text-lg font-bold text-emerald-600 dark:text-emerald-400">
                 <ArrowUpRight className="h-4 w-4" />
                 {stats.up}
               </span>
@@ -108,7 +108,7 @@ export function MarketWatch() {
                 className={cn(
                   'w-fit gap-1.5',
                   marketOpen
-                    ? 'border-sky-500/50 text-sky-600 dark:text-sky-400'
+                    ? 'border-emerald-500/50 text-emerald-600 dark:text-emerald-400'
                     : 'border-muted-foreground/40 text-muted-foreground',
                 )}
               >
@@ -125,7 +125,7 @@ export function MarketWatch() {
                   'w-fit gap-1.5',
                   mode === 'simulated'
                     ? 'border-amber-500/50 text-amber-600 dark:text-amber-400'
-                    : 'border-sky-500/50 text-sky-600 dark:text-sky-400',
+                    : 'border-emerald-500/50 text-emerald-600 dark:text-emerald-400',
                 )}
               >
                 <Activity className={cn('h-3 w-3', marketOpen && 'animate-pulse')} />
@@ -187,7 +187,7 @@ export function MarketWatch() {
                       className={cn(
                         'text-right font-bold tabular-nums',
                         positive
-                          ? 'text-sky-600 dark:text-sky-400'
+                          ? 'text-emerald-600 dark:text-emerald-400'
                           : 'text-red-600 dark:text-red-400',
                       )}
                     >

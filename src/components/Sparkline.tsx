@@ -27,7 +27,7 @@ export function Sparkline({
   const points = data
     .map((v, i) => `${(i * step).toFixed(1)},${(height - ((v - min) / range) * (height - 4) - 2).toFixed(1)}`)
     .join(' ');
-  const color = positive ? '#0ea5e9' : '#ef4444';
+  const color = positive ? '#22c55e' : '#ef4444';
   const areaPoints = `0,${height} ${points} ${width},${height}`;
 
   return (

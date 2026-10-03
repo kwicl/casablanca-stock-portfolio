@@ -18,7 +18,7 @@ import { useQuotes } from '@/hooks/useQuotes';
 import { STOCK_BY_SYMBOL } from '@/lib/market/universe';
 import { formatMAD, formatPct } from '@/lib/format';
 
-const CHART_COLORS = ['#0ea5e9', '#8b5cf6', '#f43f5e', '#f59e0b'];
+const CHART_COLORS = ['#0ea5e9', '#f59e0b', '#8b5cf6', '#10b981', '#f43f5e'];
 
 export function AnalysisView() {
   const positions = usePortfolioStore((s) => s.positions);
@@ -148,7 +148,7 @@ export function AnalysisView() {
                 <ReferenceLine y={0} stroke="hsl(var(--muted-foreground))" />
                 <Bar dataKey="pnl" radius={[4, 4, 0, 0]}>
                   {rows.map((r, i) => (
-                    <Cell key={i} fill={r.pnl >= 0 ? '#0ea5e9' : '#ef4444'} />
+                    <Cell key={i} fill={r.pnl >= 0 ? '#22c55e' : '#ef4444'} />
                   ))}
                 </Bar>
               </BarChart>
@@ -160,7 +160,7 @@ export function AnalysisView() {
                 <div className="text-xs font-medium text-muted-foreground">{r.symbol}</div>
                 <div
                   className="text-sm font-bold tabular-nums"
-                  style={{ color: r.pnl >= 0 ? '#0ea5e9' : '#ef4444' }}
+                  style={{ color: r.pnl >= 0 ? '#22c55e' : '#ef4444' }}
                 >
                   {formatPct(r.pnlPct)}
                 </div>
