@@ -1,0 +1,176 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5.9% 10%;
+    --radius: 0.625rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+/* ── PWA mobile : zones sûres (encoche iPhone, barre home) ─────────── */
+.safe-top {
+  padding-top: env(safe-area-inset-top);
+}
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* En mode standalone (app installée), éviter le défilement élastique gênant */
+@media (display-mode: standalone) {
+  html,
+  body {
+    overscroll-behavior-y: none;
+  }
+}
+
+/* Tables : meilleure lisibilité tactile sur mobile */
+@media (max-width: 640px) {
+  table {
+    font-size: 0.8125rem;
+  }
+}
+
+/* ── Lueur des indicateurs du haut : palette réduite bleu → violet → rose ── */
+.glow-wrap {
+  position: relative;
+  border-radius: calc(var(--radius) + 3px);
+  padding: 1.5px;
+  background: linear-gradient(120deg, #4f8ef7, #9b72cb, #e0607e, #4f8ef7);
+  background-size: 300% 300%;
+  animation: glow-flow 9s ease infinite;
+}
+.glow-wrap::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: inherit;
+  background-size: 300% 300%;
+  animation: inherit;
+  filter: blur(14px);
+  opacity: 0.35;
+  z-index: -1;
+}
+.dark .glow-wrap::before {
+  opacity: 0.5;
+}
+.glow-wrap > * {
+  border-radius: calc(var(--radius) + 1.5px);
+  border: 0 !important;
+  height: 100%;
+}
+
+@keyframes glow-flow {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* ── Fenêtres jointes (partie basse) : contour en pointillés + halo doux ── */
+.glow-dash {
+  position: relative;
+  border: 1.5px dashed rgba(139, 114, 203, 0.55);
+  border-radius: calc(var(--radius) + 3px);
+  padding: 2px;
+  box-shadow: 0 0 14px rgba(139, 114, 203, 0.18);
+  animation: dash-breathe 5s ease-in-out infinite;
+}
+.dark .glow-dash {
+  border-color: rgba(167, 139, 250, 0.6);
+  box-shadow: 0 0 18px rgba(167, 139, 250, 0.28);
+}
+.glow-dash > * {
+  border: 0 !important;
+  border-radius: calc(var(--radius) + 1.5px);
+  height: 100%;
+}
+
+@keyframes dash-breathe {
+  0%,
+  100% {
+    box-shadow: 0 0 10px rgba(139, 114, 203, 0.14);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(139, 114, 203, 0.32);
+  }
+}
+
+/* ── Partie supérieure : police Trebuchet MS mise en avant ─────────────── */
+.font-trebuchet {
+  font-family:
+    'Trebuchet MS',
+    'Segoe UI',
+    Verdana,
+    Geneva,
+    sans-serif;
+}
